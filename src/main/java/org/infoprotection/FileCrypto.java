@@ -4,15 +4,15 @@ import java.io.*;
 import java.math.BigInteger;
 import java.util.Scanner;
 
-public class FileEncryptor {
+public class FileCrypto {
 
     static Scanner read = new Scanner(System.in);
     static RSAAlg rsaAlg = new RSAAlg(1024);
     static BigInteger encryptedMessageDigit;
 
     public static void main(String[] args) {
-        FileEncryptor fileEncryptor = new FileEncryptor();
-        fileEncryptor.chooseMode();
+        FileCrypto fileCrypto = new FileCrypto();
+        fileCrypto.chooseMode();
     }
 
     private void chooseMode() {
@@ -53,7 +53,6 @@ public class FileEncryptor {
         }
     }
 
-
     private void decrypt() {
         System.out.println("Введите имя файла для записи расшифрованного");
         String fileName2 = read.nextLine();
@@ -63,5 +62,4 @@ public class FileEncryptor {
             throw new RuntimeException(e);
         }
     }
-
 }

@@ -4,15 +4,19 @@ import java.math.BigInteger;
 import java.util.Random;
 
 public class RSAAlg {
+
+    // Генерируемое простое число
     private BigInteger p;
+    // Генерируемое простое число
     private BigInteger q;
+    // Для (p-1)(q-1)
     private BigInteger phi;
     private BigInteger n;
     private BigInteger e;
+    //Закрытый ключ
     private BigInteger d;
 
     public RSAAlg(int numBits) {
-        // Генерация двух случайных простых чисел p и q
         Random rand = new Random();
         p = BigInteger.probablePrime(numBits, rand);
         q = BigInteger.probablePrime(numBits, rand);
@@ -21,7 +25,6 @@ public class RSAAlg {
         n = p.multiply(q);
         e = BigInteger.valueOf(65537); // Выбрано e = 65537, так как оно является большим простым числом
 
-        // Вычисление закрытого ключа d
         d = e.modInverse(phi);
     }
 
