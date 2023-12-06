@@ -43,8 +43,7 @@ public class FileCrypto {
         System.out.println("Введите имя файла для чтения исходного сообщения и имя файла для записи зашифрованного");
         String fileName1 = read.nextLine();
         String fileName2 = read.nextLine();
-        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader((new FileInputStream(new File(fileName1 + ".txt")))));
-             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter((new FileOutputStream(new File(fileName2 + ".txt")))));) {
+        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader((new FileInputStream(new File(fileName1 + ".txt"))))); BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter((new FileOutputStream(new File(fileName2 + ".txt")))));) {
             encryptedMessageDigit = rsaAlg.encrypt(bufferedReader.readLine());
             String encryptedMessageStr = String.valueOf(encryptedMessageDigit);
             bufferedWriter.write(encryptedMessageStr);

@@ -12,8 +12,7 @@ public class GostAlg {
 
     public static void main(String[] args) throws IOException {
         byte[] key;
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("key.txt"));
-             BufferedReader bufferedReader = new BufferedReader(new FileReader("key.txt"))) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("key.txt")); BufferedReader bufferedReader = new BufferedReader(new FileReader("key.txt"))) {
             bufferedWriter.write("00112233445566778899AABBCCDDEEFF00112233445566778899AABBCCDDEEFF");
             key = Hex.decode(bufferedReader.readLine());
         }
