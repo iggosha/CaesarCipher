@@ -9,6 +9,12 @@ import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Scanner;
 
+import org.bouncycastle.crypto.engines.GOST28147Engine;
+import org.bouncycastle.crypto.modes.CFBBlockCipher;
+import org.bouncycastle.crypto.params.KeyParameter;
+import org.bouncycastle.crypto.params.ParametersWithIV;
+import org.bouncycastle.util.encoders.Hex;
+
 public class Main {
 
     private static Scanner scanner = new Scanner(System.in);
